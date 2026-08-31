@@ -1,0 +1,16 @@
+{
+  "name": "Overblik — Privatøkonomi",
+  "short_name": "Overblik",
+  "description": "Personlig økonomi-app: budget, regninger og transaktioner.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#F2F4EF",
+  "theme_color": "#1E3E35",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

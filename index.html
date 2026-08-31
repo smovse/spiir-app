@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Overblik</title>
+
+  <!-- iOS/iPadOS "Add to Home Screen" behaviour -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Overblik" />
+  <link rel="apple-touch-icon" href="icons/icon-180.png" />
+
+  <meta name="theme-color" content="#1E3E35" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" />
+
+  <!--
+    Tailwind's utility classes (flex, grid, gap-*, hidden md:flex, etc.) are what
+    the whole layout is built on. This CDN build compiles them on the fly in the
+    browser. It's fetched once and then cached by the service worker below, so
+    the app still works offline after the first load.
+  -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    html, body { margin: 0; padding: 0; background: #F2F4EF; }
+    #root { min-height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="dist/bundle.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("service-worker.js").catch((err) => {
+          console.warn("Service worker registration failed:", err);
+        });
+      });
+    }
+  </script>
+</body>
+</html>
